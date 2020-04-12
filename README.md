@@ -11,6 +11,10 @@
 1. Run `yarn install` to install dependencies.
 1. Run `yarn start` to start the development server and start contributing!
 
+### Deploying
+
+This repository is set up to automatically deploy site changes to production.
+
 ## Tools used
 
 - [Gatsby](https://www.gatsbyjs.org/)
