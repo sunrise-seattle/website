@@ -1,0 +1,13 @@
+:root {
+  --sunrise-yellow: #ffde16;
+  --sunrise-dark: #33342e;
+  --sunrise-light: #e3eddf;
+}
+
+h1,
+h2,
+h3,
+p,
+footer {
+  font-family: "Source Sans Pro";
+}
