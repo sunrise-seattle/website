@@ -4,14 +4,23 @@ import { graphql } from "gatsby"
 import "../styles/styles.css"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import yellowLogo from "../../content/assets/yellow-logo.png"
 
 const home = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
 
   const content = (
-    <div>
-      <h1>Hello world</h1>
-      <p>Welcome to the {siteTitle} website!</p>
+    <div className="body">
+      <h1>{siteTitle}</h1>
+      <p>
+        Website coming soon! In the meantime, join us using{" "}
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfc06mx_j5Adhc5xDdWZjZI7turnaZOH7Q6sndllJKq4i678w/viewform">
+          this form
+        </a>
+        !
+      </p>
+      <image src={yellowLogo} />
+      <img src={yellowLogo} alt="" className="big-home-image" />
     </div>
   )
   return (

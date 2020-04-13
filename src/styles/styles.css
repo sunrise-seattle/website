@@ -10,4 +10,22 @@ h3,
 p,
 footer {
   font-family: "Source Sans Pro";
+  text-align: center;
+  color: white;
+}
+
+a {
+  color: var(--sunrise-yellow);
+}
+
+.big-home-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Silly hack to fix white outline caused by react-router */
+body,
+.layoutContainer {
+  background-color: var(--sunrise-dark);
 }

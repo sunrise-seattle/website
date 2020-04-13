@@ -1,14 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
+import "../styles/styles.css"
 
 const Layout = ({ content }) => {
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-      }}
-    >
+    <div className="layoutContainer">
       {/*TODO: add Navbar here*/}
       <main>{content}</main>
       <footer>© {new Date().getFullYear()} Sunrise Movement Seattle</footer>

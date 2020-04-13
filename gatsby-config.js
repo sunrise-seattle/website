@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Sunrise Seattle`,
+    title: `Sunrise Movement Seattle`,
     description: `A website for the Seattle Hub of the Sunrise Movement.`,
   },
   plugins: [
