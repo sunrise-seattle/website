@@ -4,12 +4,19 @@
   --sunrise-light: #e3eddf;
 }
 
+* {
+  font-family: "Source Sans Pro";
+}
+
+.layoutContainer {
+  padding: 50px;
+}
+
 h1,
 h2,
 h3,
 p,
 footer {
-  font-family: "Source Sans Pro";
   text-align: center;
   color: white;
 }
@@ -23,6 +30,79 @@ a {
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
+}
+
+.header {
+  display: grid;
+}
+
+.header-title {
+  color: var(--sunrise-yellow);
+  font-style: normal;
+  font-weight: 900;
+  font-size: 74px;
+  line-height: 78px;
+  letter-spacing: 0.1em;
+}
+
+.linked-button {
+  color: white;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 21px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 3px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 10px;
+  width: fit-content;
+  display: flex;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid white;
+}
+
+.footer-buttons {
+  display: flex;
+  align-content: flex-start;
+  flex-direction: row;
+}
+
+.footer-buttons .linked-button {
+  margin: 15px;
+}
+
+.footer-social {
+  display: flex;
+  align-content: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+.footer-social-button {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--sunrise-dark);
+  text-align: center;
+  margin-left: 10px;
+  padding: 10px;
+  font-size: 2em;
 }
 
 /* Silly hack to fix white outline caused by react-router */
