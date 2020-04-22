@@ -1,5 +1,6 @@
 // custom typefaces
 import "typeface-source-sans-pro"
+import "typeface-source-code-pro"
 
 import "prismjs/themes/prism.css"
 
