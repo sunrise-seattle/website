@@ -1,12 +1,35 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 
 import "../styles/styles.css"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import yellowLogo from "../../content/assets/yellow-logo.png"
+import { isNarrowWidth, getScreenWidth } from "../util"
 
-const home = ({ location }) => {
+export default function Home({ location }) {
+  const [screenWidth, setScreenWidth] = useState(getScreenWidth())
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(getScreenWidth())
+    }
+
+    window.addEventListener("resize", handleResize)
+  })
+
+  const calendar = (
+    <div className="calendar">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=d4a11ua9ap43jtl6h0rhngsf8s%40group.calendar.google.com&ctz=America%2FLos_Angeles"
+        width={isNarrowWidth() ? screenWidth - 40 : "550"}
+        height="480"
+        frameBorder="0"
+        scrolling="no"
+        title="calendar"
+      ></iframe>
+    </div>
+  )
+
   const content = (
     <div className="body">
       <h1>WELCOME TO SUNRISE SEATTLE!</h1>
@@ -24,15 +47,7 @@ const home = ({ location }) => {
       </div>
 
       <div className="section-embedded">
-        <div className="calendar">
-          <iframe
-            src="https://calendar.google.com/calendar/embed?src=d4a11ua9ap43jtl6h0rhngsf8s%40group.calendar.google.com&ctz=America%2FLos_Angeles"
-            width="600"
-            height="480"
-            frameborder="0"
-            scrolling="no"
-          ></iframe>
-        </div>
+        {!isNarrowWidth() && calendar}
         <div className="section-vertical">
           <h2>Upcoming Events</h2>
           <p>
@@ -42,6 +57,7 @@ const home = ({ location }) => {
             plugged in, join us at one of our upcoming events we have planned.
           </p>
         </div>
+        {isNarrowWidth() && calendar}
       </div>
     </div>
   )
@@ -55,8 +71,6 @@ const home = ({ location }) => {
     </Layout>
   )
 }
-
-export default home
 
 //TODO: Just leave this blog support here for now for the future?
 /* const BlogIndex = ({ data, location }) => {
