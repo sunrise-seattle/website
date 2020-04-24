@@ -7,5 +7,5 @@ export function getScreenWidth() {
 }
 
 export function isNarrowWidth() {
-  return getScreenWidth() < 600
+  return getScreenWidth() < 800
 }
