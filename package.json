@@ -51,7 +51,7 @@
     "url": "git+https://github.com/sunrise-seattle/website.git"
   },
   "scripts": {
-    "build": "gatsby build; echo \"sunriseseattle.org\" > public/CNAME",
+    "build": "gatsby build && echo \"sunriseseattle.org\" > public/CNAME",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",

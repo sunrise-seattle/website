@@ -6,7 +6,7 @@ import { isNarrowWidth } from "../util"
 import { Helmet } from "react-helmet"
 
 export default function Layout({ content }) {
-  const [isNarrowScreen, setNarrowScreen] = useState(false)
+  const [isNarrowScreen, setNarrowScreen] = useState(isNarrowWidth())
 
   useEffect(() => {
     const handleResize = () => {
