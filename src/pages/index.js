@@ -34,7 +34,6 @@ export default function Home({ location }) {
 
   const content = (
     <div className="body">
-      <h1>WELCOME TO SUNRISE SEATTLE!</h1>
       <div className="section">
         <h2>What's Sunrise?</h2>
         <p className="section-text">
@@ -47,6 +46,8 @@ export default function Home({ location }) {
           morning.
         </p>
       </div>
+
+      <div className="divider" />
 
       <div className="section-embedded">
         {!isNarrowWidth() && calendar}
@@ -65,8 +66,9 @@ export default function Home({ location }) {
   )
   return (
     <Layout
-      location={location}
+      location="Home"
       title={"Sunrise Movement Seattle"}
+      heading={"WELCOME TO SUNRISE SEATTLE!"}
       content={content}
     >
       <SEO title="Home" />
