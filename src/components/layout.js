@@ -1,13 +1,27 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import "../styles/styles.css"
 import Footer from "./Footer"
 import yellowLogo from "../../content/assets/yellow-logo.png"
+import { isNarrowWidth } from "../util"
+import { Helmet } from "react-helmet"
 
-const Layout = ({ content }) => {
+export default function Layout({ content }) {
+  const [isNarrowScreen, setNarrowScreen] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setNarrowScreen(isNarrowWidth())
+    }
+
+    window.addEventListener("resize", handleResize)
+  })
+
   return (
-    <div className="layoutContainer">
-      <title>Sunrise Movement Seattle</title>
-      <image src={yellowLogo} />
+    <div className={isNarrowScreen ? "narrowLayout" : "fullLayout"}>
+      <Helmet>
+        <link rel="icon" src={yellowLogo} />
+        <title>Sunrise Movement Seattle</title>
+      </Helmet>
 
       {/*TODO: add Navbar here*/}
       <main>{content}</main>
@@ -15,5 +29,3 @@ const Layout = ({ content }) => {
     </div>
   )
 }
-
-export default Layout
