@@ -6,6 +6,6 @@ export function getScreenWidth() {
   return 0
 }
 
-export function isNarrowWidth() {
+export function isMobile() {
   return getScreenWidth() < 800
 }

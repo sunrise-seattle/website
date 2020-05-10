@@ -22,6 +22,7 @@ module.exports = {
         icon: `content/assets/yellow-logo.png`,
       },
     },
+    `gatsby-plugin-aphrodite`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-client-side-redirect`, // keep it in last in list
 

@@ -1,32 +1,47 @@
-import React, { useState, useEffect } from "react"
 import "../styles/styles.css"
+
+import React, { useEffect, useState } from "react"
+import { StyleSheet, css } from "aphrodite"
+
 import Footer from "./Footer"
 import Header from "./Header"
-import yellowLogo from "../../content/assets/yellow-logo.png"
-import { isNarrowWidth } from "../util"
 import { Helmet } from "react-helmet"
+import { MobileProvider } from "../MobileContext"
+import { isMobile } from "../util"
+import yellowLogo from "../../content/assets/yellow-logo.png"
 
 export default function Layout({ location, title, heading, content }) {
-  const [isNarrowScreen, setNarrowScreen] = useState(isNarrowWidth())
+  const [mobile, setMobile] = useState(isMobile())
 
   useEffect(() => {
     const handleResize = () => {
-      setNarrowScreen(isNarrowWidth())
+      setMobile(isMobile())
     }
 
     window.addEventListener("resize", handleResize)
   })
 
   return (
-    <div className={isNarrowScreen ? "narrowLayout" : "fullLayout"}>
+    <MobileProvider value={mobile}>
       <Helmet>
         <link rel="icon" src={yellowLogo} />
         <title>{title}</title>
       </Helmet>
 
-      <Header location={location} heading={heading} />
-      <main>{content}</main>
-      <Footer />
-    </div>
+      <div className={mobile ? css(styles.mobile) : css(styles.full)}>
+        <Header location={location} heading={heading} />
+        <main>{content}</main>
+        <Footer />
+      </div>
+    </MobileProvider>
   )
 }
+
+const styles = StyleSheet.create({
+  mobile: {
+    padding: "10px",
+  },
+  full: {
+    padding: "50px",
+  },
+})
