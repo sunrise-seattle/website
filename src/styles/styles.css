@@ -9,14 +9,6 @@
   font-family: "Source Sans Pro";
 }
 
-.fullLayout {
-  padding: 50px;
-}
-
-.narrowLayout {
-  padding: 10px;
-}
-
 h1 {
   color: var(--sunrise-yellow);
   font-style: normal;
@@ -26,10 +18,6 @@ h1 {
   letter-spacing: 0.1em;
 }
 
-.narrowLayout h1 {
-  text-align: center;
-}
-
 h2 {
   font-family: "Source Code Pro";
   color: var(--sunrise-yellow);
@@ -37,10 +25,6 @@ h2 {
   font-weight: 900;
   font-size: 36px;
   line-height: 100%;
-}
-
-.narrowLayout h2 {
-  text-align: center;
 }
 
 p {
@@ -55,12 +39,6 @@ a {
   color: var(--sunrise-yellow);
 }
 
-.divider {
-  border-top: 0.5px solid white;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
 .header {
   display: grid;
 }
@@ -72,150 +50,6 @@ a {
   font-size: 74px;
   line-height: 78px;
   letter-spacing: 0.1em;
-}
-
-.fullLayout .section-text {
-  margin: 30px;
-}
-
-.narrowLayout .section-text {
-  text-align: center;
-}
-
-.fullLayout .section {
-  display: flex;
-  flex-direction: row;
-}
-
-.narrowLayout .section {
-  display: flex;
-  flex-direction: column;
-}
-
-.section-vertical {
-  display: flex;
-  flex-direction: column;
-}
-
-.fullLayout .section-vertical {
-  padding-left: 20px;
-}
-
-.fullLayout .section-embedded {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.narrowLayout .section-embedded {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-}
-
-.linked-button {
-  color: white;
-  text-decoration: none;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 17px;
-  line-height: 21px;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border: 3px solid #ffffff;
-  box-sizing: border-box;
-  border-radius: 6px;
-  padding: 10px;
-  width: fit-content;
-  display: flex;
-}
-
-.navbar {
-  display: flex;
-}
-
-.navbar-logo {
-  flex: 1;
-  max-width: 82px;
-  width: 82px;
-  height: 123px;
-  max-height: 123px;
-}
-
-.navbar-items {
-  flex: 3;
-  text-align: center;
-  align-items: center;
-  justify-items: center;
-}
-
-.navbar-link {
-  text-decoration: none;
-  color: white;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 23px;
-}
-
-.navbar-current {
-  color: var(--sunrise-yellow);
-  text-decoration: underline;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 23px;
-}
-
-.navbar-buttons {
-  flex: 1;
-}
-
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-top: 0.5px solid white;
-  margin-top: 20px;
-}
-
-.footer-buttons {
-  display: flex;
-  align-content: flex-start;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.footer-buttons .linked-button {
-  margin-top: 15px;
-  margin-left: 15px;
-}
-
-.footer-social {
-  display: flex;
-  align-content: flex-end;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin: 10px;
-  flex-wrap: wrap;
-}
-
-.footer-social-button {
-  height: 30px;
-  width: 30px;
-  background-color: white;
-  border-radius: 50%;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  text-decoration: none;
-  color: var(--sunrise-dark);
-  text-align: center;
-  margin: 10px;
-  padding: 10px;
-  font-size: 2em;
 }
 
 /* Silly hack to fix white outline caused by react-router */
