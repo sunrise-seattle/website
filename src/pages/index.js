@@ -41,7 +41,7 @@ export default function Home() {
     <Layout
       location="Home"
       title={"Sunrise Movement Seattle"}
-      heading={"WELCOME TO SUNRISE SEATTLE!"}
+      heading={"Welcome to Sunrise Seattle!"}
       content={content}
     >
       <SEO

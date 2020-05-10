@@ -11,6 +11,15 @@
 1. Run `yarn install` to install dependencies.
 1. Run `yarn start` to start the development server and start contributing!
 
+### Git Workflow
+1. Start development server (see 5-6 from Setup).
+1. Check out a new branch (`git checkout -b <name-of-branch>`).
+1. Make changes to the files.
+1. Add files to a new git commit (`git add .`).
+1. Commit the files to be pushed (`git commit -m "Message here."`).
+1. Push files to a new branch (`git push origin <name-of-branch>`).
+1. Go to Github website and start a new pull request (green button on repo page).
+
 ### Deploying
 
 This repository is set up to automatically deploy site changes to production.
