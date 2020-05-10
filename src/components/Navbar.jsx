@@ -1,11 +1,15 @@
-import React from "react"
 import LinkedButton from "./LinkedButton"
+import React from "react"
 import yellowLogo from "../../content/assets/yellow-logo.png"
 
 export default function Navbar({ location }) {
   return (
     <div className="navbar">
-      <img className="navbar-logo" src={yellowLogo} />
+      <img
+        className="navbar-logo"
+        src={yellowLogo}
+        alt="Sunrise Seattle Logo"
+      />
       <div className="navbar-items">
         <a
           className={location === "Home" ? "navbar-current" : "navbar-link"}
