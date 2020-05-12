@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: "50%",
     display: "flex",
-    alignContent: "center",
+    alignItems: "center",
     justifyContent: "center",
     textDecoration: "none",
     color: "var(--sunrise-dark)",

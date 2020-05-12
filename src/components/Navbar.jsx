@@ -4,25 +4,32 @@ import LinkedButton from "./LinkedButton"
 import React from "react"
 import yellowLogo from "../../content/assets/yellow-logo.png"
 
+const pages = ["Contact"]
+
 export default function Navbar({ location }) {
   return (
     <div className={css(styles.navbar)}>
-      <img
-        className={css(styles.navbarLogo)}
-        src={yellowLogo}
-        alt="Sunrise Seattle Logo"
-      />
+      <a href="/">
+        <img
+          className={css(styles.navbarLogo)}
+          src={yellowLogo}
+          alt="Sunrise Seattle Logo"
+        />
+      </a>
       <div className={css(styles.navbarItems)}>
-        <a
-          className={
-            location === "Home"
-              ? css(styles.navbarCurrent)
-              : css(styles.navbarLink)
-          }
-          href="/"
-        >
-          Home
-        </a>
+        {pages.map(page => (
+          <a
+            className={
+              location === page
+                ? css(styles.navbarCurrent)
+                : css(styles.navbarLink)
+            }
+            href={`/${page.toLowerCase()}`}
+            key={`navbar-${page}`}
+          >
+            {page}
+          </a>
+        ))}
       </div>
       <div className={css(styles.navbarButtons)}>
         <LinkedButton
@@ -57,14 +64,19 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontSize: "18px",
     lineHeight: "23px",
+    marginLeft: "20px",
+    marginRight: "20px",
   },
   navbarCurrent: {
     color: "var(--sunrise-yellow)",
-    textDecoration: "underline",
+    textDecoration: "none",
     fontStyle: "normal",
     fontWeight: "600",
     fontSize: "18px",
     lineHeight: "23px",
+    marginLeft: "20px",
+    marginRight: "20px",
+    borderBottom: "2px solid var(--sunrise-yellow)",
   },
   navbarButtons: { flex: "1" },
 })
