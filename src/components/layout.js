@@ -1,11 +1,11 @@
 import "../styles/styles.css"
 
+import { Helmet, HelmetProvider } from "react-helmet-async"
 import React, { useEffect, useState } from "react"
 import { StyleSheet, css } from "aphrodite"
 
 import Footer from "./Footer"
 import Header from "./Header"
-import { Helmet } from "react-helmet"
 import { MobileProvider } from "../MobileContext"
 import { isMobile } from "../util"
 import yellowLogo from "../../content/assets/yellow-logo.png"
@@ -22,18 +22,20 @@ export default function Layout({ location, title, heading, content }) {
   })
 
   return (
-    <MobileProvider value={mobile}>
-      <Helmet>
-        <link rel="icon" src={yellowLogo} />
-        <title>{title}</title>
-      </Helmet>
+    <HelmetProvider>
+      <MobileProvider value={mobile}>
+        <Helmet>
+          <link rel="icon" src={yellowLogo} />
+          <title>{title}</title>
+        </Helmet>
 
-      <div className={mobile ? css(styles.mobile) : css(styles.full)}>
-        <Header location={location} heading={heading} />
-        <main>{content}</main>
-        <Footer />
-      </div>
-    </MobileProvider>
+        <div className={mobile ? css(styles.mobile) : css(styles.full)}>
+          <Header location={location} heading={heading} />
+          <main>{content}</main>
+          <Footer />
+        </div>
+      </MobileProvider>
+    </HelmetProvider>
   )
 }
 
