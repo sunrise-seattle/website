@@ -23,7 +23,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-aphrodite`,
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet-async`,
     `gatsby-plugin-client-side-redirect`, // keep it in last in list
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
