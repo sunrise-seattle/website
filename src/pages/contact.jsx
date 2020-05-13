@@ -32,40 +32,40 @@ const styles = StyleSheet.create({
   },
 })
 
-const emailSectionContent = {
-  title: "EMAIL",
-  icon: (
-    <div className={css(styles.circle)}>
-      <FontAwesomeIcon icon={faEnvelope} className={css(styles.icon)} />
-    </div>
-  ),
-  text:
-    "For questions, comments, press inquiries, or to get in touch about workshops or presentations, please send us an email.",
-}
-
-const donateSectionContent = {
-  title: "DONATE",
-  icon: (
-    <div className={css(styles.circle)}>
-      <FontAwesomeIcon icon={faDollarSign} className={css(styles.icon)} />
-    </div>
-  ),
-  text:
-    "If you’d like to financially support our hub, please consider donating to our ActBlue.",
-}
-
-const nationalSectionContent = {
-  title: "SUNRISE NATIONAL",
-  icon: (
-    <div className={css(styles.circle)}>
-      <img className={css(styles.icon)} src={CircleLogo} />
-    </div>
-  ),
-  text:
-    "To learn more about the Sunrise Movement, you can find more information on the Sunrise website.",
-}
-
 export default function Contact() {
+  const emailSectionContent = {
+    title: "EMAIL",
+    icon: (
+      <div className={css(styles.circle)}>
+        <FontAwesomeIcon icon={faEnvelope} className={css(styles.icon)} />
+      </div>
+    ),
+    text:
+      "For questions, comments, press inquiries, or to get in touch about workshops or presentations, please send us an email.",
+  }
+
+  const donateSectionContent = {
+    title: "DONATE",
+    icon: (
+      <div className={css(styles.circle)}>
+        <FontAwesomeIcon icon={faDollarSign} className={css(styles.icon)} />
+      </div>
+    ),
+    text:
+      "If you’d like to financially support our hub, please consider donating to our ActBlue.",
+  }
+
+  const nationalSectionContent = {
+    title: "SUNRISE NATIONAL",
+    icon: (
+      <div className={css(styles.circle)}>
+        <img className={css(styles.icon)} src={CircleLogo} />
+      </div>
+    ),
+    text:
+      "To learn more about the Sunrise Movement, you can find more information on the Sunrise website.",
+  }
+
   const content = (
     <div className={styles.body}>
       <VerticalSection
