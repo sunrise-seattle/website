@@ -1,17 +1,27 @@
 import "../styles/styles.css"
 
+import { StyleSheet, css } from "aphrodite"
+
 import Divider from "../components/Divider"
 import EmbeddedSection from "../components/EmbeddedSection"
 import GoogleCalendar from "../components/GoogleCalendar"
 import Layout from "../components/layout"
+import LinkedButton from "../components/LinkedButton"
 import React from "react"
 import SEO from "../components/seo"
 import TextSection from "../components/TextSection"
 import { graphql } from "gatsby"
+import headerImage from "../../content/assets/banners/SunriseSeattle-AugustTraining-Group.png"
+
+const styles = StyleSheet.create({
+  aboutButton: {
+    width: "200px !important",
+  },
+})
 
 export default function Home() {
   const content = (
-    <div className="body">
+    <>
       <TextSection
         heading="What's Sunrise?"
         body="The Sunrise Movement is a national, youth-led movement that aims to
@@ -35,7 +45,16 @@ export default function Home() {
       >
         <GoogleCalendar url="https://calendar.google.com/calendar/embed?src=d4a11ua9ap43jtl6h0rhngsf8s%40group.calendar.google.com&ctz=America%2FLos_Angeles" />
       </EmbeddedSection>
-    </div>
+    </>
+  )
+
+  // TODO: link to about page instead
+  const aboutUsButton = (
+    <LinkedButton
+      link={"/contact"}
+      text="ABOUT US"
+      className={css(styles.aboutButton)}
+    />
   )
   return (
     <Layout
@@ -43,6 +62,8 @@ export default function Home() {
       title={"Sunrise Movement Seattle"}
       heading={"WELCOME TO SUNRISE SEATTLE!"}
       content={content}
+      headerButtons={[aboutUsButton]}
+      headerImage={headerImage}
     >
       <SEO
         title="Home"
