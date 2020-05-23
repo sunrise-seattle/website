@@ -1,37 +1,72 @@
+import React, { useContext, useState } from "react"
 import { StyleSheet, css } from "aphrodite"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import LinkedButton from "./LinkedButton"
-import React from "react"
+import { MobileContext } from "../MobileContext"
+import { faBars } from "@fortawesome/free-solid-svg-icons"
 import yellowLogo from "../../content/assets/yellow-logo.png"
 
-const pages = ["Contact"]
+const pages = [
+  {
+    name: "Contact",
+    path: "/contact",
+  },
+  {
+    name: "About",
+    path: "/404",
+  },
+  {
+    name: "Our Teams",
+    path: "/404",
+  },
+  {
+    name: "Resources",
+    path: "/404",
+  },
+]
 
 export default function Navbar({ location }) {
-  return (
-    <div className={css(styles.navbar)}>
-      <a href="/">
-        <img
-          className={css(styles.navbarLogo)}
-          src={yellowLogo}
-          alt="Sunrise Seattle Logo"
-        />
-      </a>
-      <div className={css(styles.navbarItems)}>
-        {pages.map(page => (
-          <a
-            className={
-              location === page
-                ? css(styles.navbarCurrent)
-                : css(styles.navbarLink)
-            }
-            href={`/${page.toLowerCase()}`}
-            key={`navbar-${page}`}
-          >
-            {page}
-          </a>
-        ))}
-      </div>
-      <div className={css(styles.navbarButtons)}>
+  const isMobile = useContext(MobileContext)
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const branding = (
+    <a href="/">
+      <img
+        className={css(styles.navbarLogo)}
+        src={yellowLogo}
+        alt="Sunrise Seattle Logo"
+      />
+    </a>
+  )
+
+  const links = (
+    <div
+      className={
+        isMobile ? css(styles.navbarItemsMobile) : css(styles.navbarItems)
+      }
+    >
+      {pages.map(page => (
+        <a
+          className={
+            location === page.name
+              ? css(styles.navbarCurrent)
+              : css(styles.navbarLink)
+          }
+          href={page.path}
+          key={`navbar-${page.name}`}
+        >
+          {page.name}
+        </a>
+      ))}
+    </div>
+  )
+
+  const fullView = (
+    <div className={css(styles.full)}>
+      {branding}
+      {links}
+      <div className={css(styles.button)}>
         <LinkedButton
           link="https://secure.actblue.com/donate/sunriseseattle"
           text="DONATE TO OUR HUB"
@@ -39,10 +74,33 @@ export default function Navbar({ location }) {
       </div>
     </div>
   )
+
+  const mobileView = (
+    <div className={css(styles.mobile)}>
+      <div className={css(styles.full)}>
+        {branding}
+        <div
+          className={css(styles.menuIcon)}
+          color="white"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <FontAwesomeIcon icon={faBars} />
+        </div>
+      </div>
+      {menuOpen && links}
+    </div>
+  )
+
+  return isMobile ? mobileView : fullView
 }
 
 const styles = StyleSheet.create({
-  navbar: { display: "flex" },
+  full: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  mobile: { display: "flex", flexDirection: "column" },
   navbarLogo: {
     flex: "1",
     maxWidth: "82px",
@@ -57,6 +115,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  navbarItemsMobile: {
+    display: "flex",
+    flexDirection: "column",
+    flex: "3",
+    textAlign: "center",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  menuIcon: {
+    color: "var(--sunrise-yellow)",
+    fontSize: "36px",
+    padding: "20px",
+    cursor: "pointer",
+  },
   navbarLink: {
     textDecoration: "none",
     color: "white",
@@ -66,6 +138,8 @@ const styles = StyleSheet.create({
     lineHeight: "23px",
     marginLeft: "20px",
     marginRight: "20px",
+    paddingTop: "20px",
+    paddingBottom: "20px",
   },
   navbarCurrent: {
     color: "var(--sunrise-yellow)",
@@ -78,5 +152,5 @@ const styles = StyleSheet.create({
     marginRight: "20px",
     borderBottom: "2px solid var(--sunrise-yellow)",
   },
-  navbarButtons: { flex: "1" },
+  button: { flex: "1", marginTop: "30px" },
 })

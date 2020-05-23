@@ -10,7 +10,26 @@ import { MobileProvider } from "../MobileContext"
 import { isMobile } from "../util"
 import yellowLogo from "../../content/assets/yellow-logo.png"
 
-export default function Layout({ location, title, heading, content }) {
+const styles = StyleSheet.create({
+  mobile: {
+    padding: "10px",
+  },
+  full: {
+    padding: "50px",
+  },
+  body: {
+    backgroundColor: "var(--sunrise-dark)",
+  },
+})
+
+export default function Layout({
+  location,
+  title,
+  heading,
+  headerButtons,
+  content,
+  headerImage,
+}) {
   const [mobile, setMobile] = useState(isMobile())
 
   useEffect(() => {
@@ -29,21 +48,19 @@ export default function Layout({ location, title, heading, content }) {
           <title>{title}</title>
         </Helmet>
 
-        <div className={mobile ? css(styles.mobile) : css(styles.full)}>
-          <Header location={location} heading={heading} />
-          <main>{content}</main>
-          <Footer />
+        <div className={css(styles.body)}>
+          <Header
+            location={location}
+            heading={heading}
+            buttons={headerButtons}
+            backgroundImage={headerImage}
+          />
+          <div className={mobile ? css(styles.mobile) : css(styles.full)}>
+            <main>{content}</main>
+            <Footer />
+          </div>
         </div>
       </MobileProvider>
     </HelmetProvider>
   )
 }
-
-const styles = StyleSheet.create({
-  mobile: {
-    padding: "10px",
-  },
-  full: {
-    padding: "50px",
-  },
-})

@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     fontSize: "17px",
     lineHeight: "21px",
     alignItems: "center",
+    justifyContent: "center",
     textAlign: "center",
     letterSpacing: "0.05em",
     textTransform: "uppercase",

@@ -3,6 +3,7 @@
   --sunrise-dark: #33342e;
   --sunrise-light: #e3eddf;
   --cloudy-grey: #afb6b9;
+  background-color: var(--sunrise-dark);
 }
 
 * {
@@ -47,22 +48,7 @@ a {
   color: var(--sunrise-yellow);
 }
 
-.header {
-  display: grid;
-}
-
-.header-title {
-  color: var(--sunrise-yellow);
-  font-style: normal;
-  font-weight: 900;
-  font-size: 74px;
-  line-height: 78px;
-  letter-spacing: 0.1em;
-}
-
 /* Silly hack to fix white outline caused by react-router */
-body,
-.narrowLayout,
-.fullLayout {
-  background-color: var(--sunrise-dark);
+body {
+  display: contents;
 }

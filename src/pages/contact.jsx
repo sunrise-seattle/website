@@ -10,6 +10,7 @@ import React from "react"
 import SEO from "../components/seo"
 import VerticalSection from "../components/VerticalSection"
 import { graphql } from "gatsby"
+import headerImage from "../../content/assets/banners/SunriseSeattle-StrategyRetreat-January.jpg"
 
 const styles = StyleSheet.create({
   circle: {
@@ -59,7 +60,11 @@ export default function Contact() {
     title: "SUNRISE NATIONAL",
     icon: (
       <div className={css(styles.circle)}>
-        <img className={css(styles.icon)} src={CircleLogo} />
+        <img
+          className={css(styles.icon)}
+          src={CircleLogo}
+          alt="Sunrise Movement logo"
+        />
       </div>
     ),
     text:
@@ -83,6 +88,7 @@ export default function Contact() {
       title={"Contact Us"}
       heading={"GET IN TOUCH"}
       content={content}
+      headerImage={headerImage}
     >
       <SEO
         title="Contact Us"
