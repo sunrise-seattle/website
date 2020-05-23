@@ -4,7 +4,12 @@ import LinkedButton from "./LinkedButton"
 import React from "react"
 import yellowLogo from "../../content/assets/yellow-logo.png"
 
-const pages = ["Contact"]
+const pages = [
+  {
+    name: "Contact",
+    path: "/contact",
+  },
+]
 
 export default function Navbar({ location }) {
   return (
@@ -20,14 +25,14 @@ export default function Navbar({ location }) {
         {pages.map(page => (
           <a
             className={
-              location === page
+              location === page.name
                 ? css(styles.navbarCurrent)
                 : css(styles.navbarLink)
             }
-            href={`/${page.toLowerCase()}`}
-            key={`navbar-${page}`}
+            href={page.path}
+            key={`navbar-${page.name}`}
           >
-            {page}
+            {page.name}
           </a>
         ))}
       </div>
