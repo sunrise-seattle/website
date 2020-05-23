@@ -1,3 +1,4 @@
+import React, { useContext } from "react"
 import { StyleSheet, css } from "aphrodite"
 import {
   faFacebookF,
@@ -7,13 +8,17 @@ import {
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import LinkedButton from "./LinkedButton"
-import React from "react"
+import { MobileContext } from "../MobileContext"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
 export default function Footer() {
+  const isMobile = useContext(MobileContext)
+
   return (
-    <div className={css(styles.footer)}>
-      <div className={css(styles.footerButtons)}>
+    <div className={isMobile ? css(styles.mobile) : css(styles.full)}>
+      <div
+        className={isMobile ? css(styles.mobileButtons) : css(styles.buttons)}
+      >
         <LinkedButton
           className={css(styles.footerButton)}
           link="https://secure.actblue.com/donate/sunriseseattle"
@@ -56,20 +61,26 @@ export default function Footer() {
 }
 
 const styles = StyleSheet.create({
-  footer: {
+  full: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     borderTop: "0.5px solid white",
     marginTop: "20px",
   },
+  mobile: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    borderTop: "0.5px solid white",
+    marginTop: "20px",
+  },
   footerSocial: {
     display: "flex",
-    alignContent: "flex-end",
     flexDirection: "row",
-    justifyContent: "space-evenly",
     margin: "10px",
     flexWrap: "wrap",
+    justifyContent: "center",
   },
   footerSocialButton: {
     height: "30px",
@@ -86,10 +97,16 @@ const styles = StyleSheet.create({
     padding: "10px",
     fontSize: "2em",
   },
-  footerButtons: {
+  buttons: {
     display: "flex",
     alignContent: "flex-start",
     flexDirection: "row",
+    flexWrap: "wrap",
+  },
+  mobileButtons: {
+    display: "flex",
+    alignContent: "center",
+    flexDirection: "column",
     flexWrap: "wrap",
   },
   footerButton: {
