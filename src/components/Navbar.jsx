@@ -14,15 +14,15 @@ const pages = [
   },
   {
     name: "About",
-    path: "/about",
+    path: "/404",
   },
   {
     name: "Our Teams",
-    path: "/teams",
+    path: "/404",
   },
   {
     name: "Resources",
-    path: "/resources",
+    path: "/404",
   },
 ]
 
