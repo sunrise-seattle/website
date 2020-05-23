@@ -11,7 +11,7 @@ import React from "react"
 import SEO from "../components/seo"
 import TextSection from "../components/TextSection"
 import { graphql } from "gatsby"
-import headerImage from "../../content/assets/banners/SunriseSeattle-AugustTraining-Group.png"
+import headerImage from "../../content/assets/banners/SunriseSeattle-AugustTraining-Group.jpg"
 
 const styles = StyleSheet.create({
   aboutButton: {

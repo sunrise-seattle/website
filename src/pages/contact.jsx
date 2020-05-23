@@ -10,7 +10,7 @@ import React from "react"
 import SEO from "../components/seo"
 import VerticalSection from "../components/VerticalSection"
 import { graphql } from "gatsby"
-import headerImage from "../../content/assets/banners/SunriseSeattle-StrategyRetreat-January.png"
+import headerImage from "../../content/assets/banners/SunriseSeattle-StrategyRetreat-January.jpg"
 
 const styles = StyleSheet.create({
   circle: {
