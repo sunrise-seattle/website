@@ -43,6 +43,7 @@ export default function Contact() {
     ),
     text:
       "For questions, comments, press inquiries, or to get in touch about workshops or presentations, please send us an email.",
+    link: "mailto:sunrisemovementseattle@gmail.com",
   }
 
   const donateSectionContent = {
@@ -54,6 +55,7 @@ export default function Contact() {
     ),
     text:
       "If you’d like to financially support our hub, please consider donating to our ActBlue.",
+    link: "https://secure.actblue.com/donate/sunriseseattle",
   }
 
   const nationalSectionContent = {
@@ -69,6 +71,7 @@ export default function Contact() {
     ),
     text:
       "To learn more about the Sunrise Movement, you can find more information on the Sunrise website.",
+    link: "https://www.sunrisemovement.org/",
   }
 
   const content = (

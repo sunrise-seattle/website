@@ -26,7 +26,7 @@ const pages = [
   },
   {
     name: "Resources",
-    path: "/404",
+    path: "/resources",
   },
 ]
 
