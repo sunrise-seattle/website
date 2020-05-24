@@ -9,16 +9,20 @@ import yellowLogo from "../../content/assets/yellow-logo.png"
 
 const pages = [
   {
-    name: "Contact",
-    path: "/contact",
+    name: "Home",
+    path: "/",
   },
   {
     name: "About",
-    path: "/404",
+    path: "/about",
   },
   {
     name: "Our Teams",
     path: "/404",
+  },
+  {
+    name: "Contact",
+    path: "/contact",
   },
   {
     name: "Resources",
@@ -136,10 +140,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontSize: "18px",
     lineHeight: "23px",
-    marginLeft: "20px",
-    marginRight: "20px",
-    paddingTop: "20px",
-    paddingBottom: "20px",
+    margin: "15px",
   },
   navbarCurrent: {
     color: "var(--sunrise-yellow)",
@@ -148,8 +149,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontSize: "18px",
     lineHeight: "23px",
-    marginLeft: "20px",
-    marginRight: "20px",
+    margin: "15px",
     borderBottom: "2px solid var(--sunrise-yellow)",
   },
   button: { flex: "1", marginTop: "30px" },

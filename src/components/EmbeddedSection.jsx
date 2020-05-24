@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
   embeddedMobile: {
     display: "flex",
     flexDirection: "column",
+    alignItems: "center",
   },
   section: {
     display: "flex",

@@ -51,7 +51,7 @@ export default function Home() {
   // TODO: link to about page instead
   const aboutUsButton = (
     <LinkedButton
-      link={"/contact"}
+      link={"/about"}
       text="ABOUT US"
       className={css(styles.aboutButton)}
     />
