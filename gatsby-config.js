@@ -16,9 +16,6 @@ module.exports = {
       options: {
         name: `Sunrise Seattle Website`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
         icon: `content/assets/yellow-logo.png`,
       },
     },
