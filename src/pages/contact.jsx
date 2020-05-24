@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     color: "var(--sunrise-dark)",
   },
   body: {
-    paddingTop: "50px",
-    paddingBottom: "50px",
+    paddingTop: "100px",
+    paddingBottom: "100px",
   },
 })
 
@@ -72,7 +72,7 @@ export default function Contact() {
   }
 
   const content = (
-    <div className={styles.body}>
+    <div className={css(styles.body)}>
       <VerticalSection
         content={[
           emailSectionContent,

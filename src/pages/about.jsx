@@ -5,7 +5,6 @@ import { StyleSheet, css } from "aphrodite"
 
 import CaptionedImage from "../components/CaptionedImage"
 import Layout from "../components/layout"
-import { MobileContext } from "../MobileContext"
 import SEO from "../components/seo"
 import TextSection from "../components/TextSection"
 import VerticalSection from "../components/VerticalSection"
@@ -46,7 +45,6 @@ const styles = StyleSheet.create({
 })
 
 export default function About() {
-  // TODO: figure out why the mobile context isn't working here
   const [mobile, setMobile] = useState(isMobileFunc())
   useEffect(() => {
     const handleResize = () => {

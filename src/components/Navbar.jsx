@@ -18,7 +18,7 @@ const pages = [
   },
   {
     name: "Our Teams",
-    path: "/404",
+    path: "/teams",
   },
   {
     name: "Contact",
