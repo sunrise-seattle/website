@@ -8,7 +8,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import VerticalSection from "../components/VerticalSection"
 import { graphql } from "gatsby"
-import headerImage from "../../content/assets/banners/SunriseSeattle-HubMeeting-January.jpg"
+import headerImage from "../../content/assets/banners/SunriseSeattle-BernieCanvass.jpg"
 import { isMobile as isMobileFunc } from "../util"
 
 const styles = StyleSheet.create({
@@ -87,15 +87,15 @@ export default function Resources() {
   )
   return (
     <Layout
-      location="Our Teams"
-      title={"Our Teams"}
-      heading={"OUR TEAMS"}
+      location="Resources"
+      title={"Resources"}
+      heading={"RESOURCES"}
       content={content}
       headerImage={headerImage}
     >
       <SEO
-        title="Our Teams"
-        description="The teams that make up Sunrise Movement Seattle"
+        title="Resources"
+        description="Resources for Sunrise Movement Seattle members"
       />
     </Layout>
   )
