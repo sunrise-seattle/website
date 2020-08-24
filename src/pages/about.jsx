@@ -73,7 +73,9 @@ export default function About() {
           convince Reps. Jayapal and Smith to sign on their support.
         </p>
       </div>
-      {!isMobile && <img className={css(styles.logo)} src={logo} />}
+      {!isMobile && (
+        <img className={css(styles.logo)} src={logo} alt="Sunrise logo" />
+      )}
     </div>
   )
 
