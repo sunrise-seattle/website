@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingRight: "10px",
     paddingLeft: "10px",
+    textAlign: "center",
   },
   sectionMobile: {
     display: "flex",
@@ -37,6 +38,11 @@ const styles = StyleSheet.create({
   },
   unstyledLink: {
     textDecoration: "none",
+  },
+  iconContainer: {
+    display: "flex",
+    alignSelf: "center",
+    justifyContent: "center",
   },
 })
 
@@ -62,18 +68,20 @@ export default function VerticalSection(props) {
           .map(entry => {
             const { icon, title, text, link } = entry
             return (
-              <a href={link} className={css(styles.unstyledLink)}>
-                <div
-                  className={
-                    isMobile ? css(styles.sectionMobile) : css(styles.section)
-                  }
-                  key={title}
-                >
-                  {!!icon ? icon : ""}
+              <div
+                className={
+                  isMobile ? css(styles.sectionMobile) : css(styles.section)
+                }
+                key={title}
+              >
+                <a href={link} className={css(styles.unstyledLink)}>
+                  {icon && (
+                    <div className={css(styles.iconContainer)}>{icon}</div>
+                  )}
                   <h3 className={css(styles.title)}>{title}</h3>
                   <p>{text}</p>
-                </div>
-              </a>
+                </a>
+              </div>
             )
           })
           .reduce((a, b) => (
